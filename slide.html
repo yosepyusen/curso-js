@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+<style>
+/*inicio estilos de slider */
+
+    .container-slider{
+      width: 90%;
+      max-width: 900px;
+      
+      overflow: hidden; /*pone img en uno sobrer otro*/
+      box-shadow: 0 0 0 10px #fff, /*pone un borde de 10px al rededor de la img*/
+                0 15px 50px rgb(190, 188, 188); /*sombra es pcional*/
+      position: relative; /*poner botonoes*/
+    }
+    .slider{ /*wato pone a las img en una fila*/
+      height: 250px;
+      width: 400%; /*por que son 4 img y si son 5 son 500%*/
+      display: flex;
+      margin-left: -100%;
+      
+    }
+    .slider__section{
+      width: 100%;
+
+    }
+    .slider__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;*/
+    
+  }
+  .slider_btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer; /*aparezca un booton*/
+  }
+  .slider__btn:hoover{
+    background: #fff;
+  }
+  .slider__btn--left{
+    left: 10px;
+  }
+  .slider__btn--right{
+    right: 10px;
+  }
+  .todo{
+    float: right;
+  }
+/* fin estilos de slider */
+
+/* inicio estilos de pag */
+    h2{
+      text-align: center;
+      color:#4352a8;
+      font-weight: bold;
+      font-family: Arial;
+     }
+    h3{
+      text-align: justify;
+      color:#4352a8;
+      font-weight: bold;
+      font-family: Arial;
+     }
+
+  .todo{
+    margin-left:0px;
+    width:100%;
+    margin-right:0px;
+    
+    text-align: justify;
+    }
+    .parrafo{
+
+    }
+    #img{
+    margin-left: 0px;
+    margin-right:100px;
+    margin-top: 10px;
+    width:90%;
+    border-radius: 5px;
+    float: left;
+  }
+/* fin estilos de pag */
+</style>
+
+
+ 
+    </head>
+<body>
+    <div class="todo"> 
+        <h2>PLATOS TÍPICOS DEL DISTRITO DE CHACABAMBA</h2>
+
+        <div class="card mb-3" style="max-width: 1000px; ">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                  <!-- INICIO DEL SLIDER DEL IMG-->
+                    <div class="container-slider">
+        <div class="slider" id="slider">
+     
+         <div class="slider__section">
+           <img src="images/pachamanca.JPG" alt="" class="slider__img">
+         </div>
+         <div class="slider__section">
+           <img src="images/Pachamanca-1.jpg" alt="" class="slider__img">
+         </div>
+         <div class="slider__section">
+           <img src="images/pachamanca-dgfgt.jpg" alt="" class="slider__img">
+         </div>
+         <div class="slider__section">
+           <img src="images/hornopachamanca.jpg" alt="" class="slider__img">
+         </div>
+         
+        </div>
+        <div class="slider_btn slider__btn--right " id="btn-right">&#62;</div>
+        <div class="slider_btn slider__btn--left " id="btn-left">&#60;</div>
+                    </div>
+     
+                <script>
+           
+           const slider =document.querySelector("#slider");
+         let sliderSection = document.querySelectorAll(".slider__section");
+         let sliderSectionLast = sliderSection[sliderSection.length -1];
+     
+         const btnLeft = document.querySelector("#btn-left");
+         const btnRight = document.querySelector("#btn-right");
+     
+         slider.insertAdjacentElement('afterbegin',sliderSectionLast);
+        
+      function Next(){
+           let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
+           slider.style.marginLeft = "-200%";
+           slider.style.transition = "all 0.5s";
+           setTimeout(function(){
+             slider.style.transition = "none";
+             slider.insertAdjacentElement('beforeend',sliderSectionFirst);
+             slider.style.marginLeft = "-100%";
+           }, 500);
+         }
+     
+         btnRight.addEventListener('click',function(){
+         Next();
+         });
+     
+         function Prev(){
+           let sliderSection = document.querySelectorAll(".slider__section");
+           let sliderSectionLast = sliderSection[sliderSection.length -1];
+     
+           slider.style.marginLeft = "0";
+           slider.style.transition = "all 0.5s";
+           setTimeout(function(){
+             slider.style.transition = "none";
+             slider.insertAdjacentElement('afterbegin',sliderSectionLast);
+             slider.style.marginLeft = "-100%";
+           }, 500);
+         }
+     
+         btnRight.addEventListener('click',function(){
+         Next();
+         });
+     
+         btnLeft.addEventListener('click',function(){
+         Prev();
+         });
+         setInterval(function(){
+           Next();
+         }, 5000)
+                </script>
+          <!--- FIN DEL SLIDER DE IMAGENES -->
+          <img id="img" src="images/picante-de-cuy.JPG"  alt="...">
+          <img id="img" src="images/chicharrones.jpg"  alt="...">
+          <img id="img" src="images/trucha-frita.jpg"  alt="...">
+          <img id="img" src="images/locrodegallina.jpg"  alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <div class="parrafo">
+                      <b>Entre los platos típicos de la región destacan: </b>
+                        <h3>Pachamanca</h3>
+                        La Pachamanca es un milenario y reverente ritual en el que el hombre andino se comunica con la Pacha Mama o madre tierra. Es un ritual generoso y festivo.
+                        Es una colorida alegria compartida. Pacha significa tierra, manka es olla. La Pachamanca es un vocablo de la lengua quechua que significa "olla en la tierra" o "cuando la tierra se convierte en olla".
+                        La Pachamanca es un horneado de alimentos que se realiza bajo tierra gracias al calor de piedras calentadas al máximo. Para su preparación se utilizan principalmente diversos tipos de carne acompañadas de vegetales y tubérculos de la región andina, en Huánuco el ingrediente que le da la exquisitez es el chincho (único en toda la región).
+                        <br> <br><br><h3>Picante de cuy</h3> 
+                        El Picante de Cuy, también llamado Cuy Colorado, es una receta pre-inca, originaria de la Sierra peruana. Con el paso de los años se ha extendido por todo el país, consolidándose como uno de nuestros platillos más populares y deliciosos. Si quieres aprender cómo preparar Picante de Cuy, este es el momento.
+                         <br><br><br><br><h3>Chicharron de Cerdo</h3>
+                         El chicharrón de chancho o cerdo es una comida típica del sur peruano, es fácil de preparar y no necesita mucho tiempo de cocción. Se elabora a base de trozos de cerdo, se sirve con camote, papas sancochadas y mote; además puedes agregarle salsa criolla y lechuga.  Es un plato muy sabroso.
+                         <br><br><br><br><br><h3>Trucha Frita</h3>
+                         Este platillo es típico de la sierra peruana, específicamente de Puno. La trucha frita es un alimento muy nutritivo porque su carne tiene potasio, fósforo, magnesio, hierro y zinc. Este platillo es muy sencillo de preparar, usualmente se acompaña con ensalada criolla y papas fritas o sancochadas.
+                         <br><br><br><br><br><h3>Caldo de gallina</h3>
+                         El Caldo de Gallina es una de las sopas más representativas de la cultura peruana y es considerado como un increíble reconstituyente anímico para luego de una jornada agotadora, o para contrarrestar los indicios del malestar general causado por la gripe.
+                    </div>
+                   <p class="card-text"><small class="text-muted">@copyringth aguirre</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</body>
+</html>

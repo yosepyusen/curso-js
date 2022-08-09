@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+        //arrelo se puede declaraar con const o let
+        //arreglo puede ser distintos pitos
+        //los arreglos siempre incializan en cero
+        const a = [];
+        const b = [1,true,"Hola",["A","B","C"]];
+        const c = [1,true,"Hola",["A","B","C", [1,2,3]]];
+        console.log(a);
+        console.log(b);
+        console.log(b.lenght);
+        console.log(b[2]);//imprime de la posicion dos 
+        console.log(b[3][2]);//imprime la B
+        console.log(c[3][3][1]);//imprime la 2
+
+        const d = Array.of("X","Y","Z",9,8,7);// dentro de of , se pone los valores que quiero cargar
+        console.log(d);
+
+        const k = Array(100).fill(false);//con (fill) llena su valor con dato (false) en cantidad de (100)
+        console.log(k);
+
+        const e = new Array();//es un forma de declarar el array un array vacio
+        console.log("Es una forma de imprimir array vacio");
+        console.log(e);
+
+        const f = new Array(1,2,3, true, false);//
+        console.log(f);// 
+        const colores =["Rojo","Verde","Azul"];
+        console.log(colores);
+        //añadimos con .push("Negro");
+        colores.push("Negro");
+        console.log(colores);
+
+        colores.pop();//pop(), quita el ultimo elemento
+        console.log(colores);
+
+        colores.forEach(function(el, index){//con la funcion forEach, recorre todo los arreglos
+            console.log(`<li id="${index}">${el}<li>`);
+        });
+        
+
+    </script>
+
+</body>
+</html>

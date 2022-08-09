@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+    
+    const saludo = function(){//funcion no declarad no se puede llamar antes pq recien estas declarando la variable
+        console.log("hola");
+    }
+    saludo();
+    console.log("**funcion q llama antes o despues");
+    
+    saludar();
+    function saludar (){//funcion declarada
+        console.log("holaiiiii");
+    }saludar();
+
+    // adow function es:
+    console.log("*******IMPRESION DE ADOW FUNCTION**");
+    const saludar1=()=>{
+        console.log("Saludar1");
+    }
+    saludar1();
+    //
+    const saludar2 =(k=55,j=48)=> console.log(k+j)
+    saludar2();
+
+    const saludar3=(nombre)=> console.log(`Hola pe:${nombre}`);
+    saludar3("Roberto");
+
+    const saludar4= dameTuNombre=>console.log(`Hola pe gil:${dameTuNombre}`);//debe usar parentesis si hay varion valores
+    saludar4("Juancho");
+
+    const sumarMas = function(num1,num2){
+        return num1+num2;
+    }
+    console.log("La sum es:"+sumarMas(8,9)+` es:${sumarMas(7,7)}`);
+
+    
+    const sumdos= (numero1, numero2) => console.log(`La suma es:${numero1+numero2}`);
+    sumdos(45,45);
+
+    /*function sumtres(namber1, namber2, ...namber3) {  
+        
+    let resultadotres=namber1+namber2;
+    
+    namber3.forEach(function (n) {
+        resultadotres += n;
+    });
+    return resultadotres;
+    }
+    console.log(sumtres(1,2,3));*/
+
+    /*const  sumtres=(namber1,namber2, ...namber3)=> {  namber1+namber2,
+        namber3.forEach(function(n){
+            resultado+=n;
+        });
+        return resultado;
+    }
+        //namber3.forEach=(n)=> resultado+=n;
+        //return resultado;
+        console.log(sumtres(1,2,3));*/
+
+        const sumtres=(m,n)=>m+n;
+        console.log(`La suma es : ${sumtres(4,8)}`);
+
+        const funcionDeVariasLineas=()=>{
+            for (let interacion = 1; interacion <= 3; interacion++) {
+                console.log(`N°: ${interacion}`);
+                
+            }
+        }; funcionDeVariasLineas();
+
+        const variosnumero =[1,2,3,4,5,6,7,8,9,10];
+
+        variosnumero.forEach(function(el, index){//recibe el elemento que esta recorriendo del arreglo y la posicion
+            //console.log(`El elemento N°${el} de ${index} esta en la posición ${index1}, ${index2}`);
+            console.log(`el elemento ${el}, esta en la posicion ${index}`);
+        });
+        valores=[1,2,3,4,5];
+        valores.forEach((one,two) =>{ 
+        console.log(`el elemento ${one}, esta en la posicion ${two}`);
+    });
+
+    function perro(){
+        console.log(this);//this se vueleve el objeto window
+    }
+    perro();
+        
+    const gato ={
+        nombre:"kenai",
+        ladrar:function(){
+            console.log(this);//ase referecnia al objeto "gato"
+        },
+        dormilon: ()=>{
+            console.log(this);//hace referencia al console window
+        },
+        comelom (){
+            console.log(this);
+        }
+    }; console.log(gato);
+    gato.ladrar();
+    gato.dormilon();
+    gato.comelom();
+
+
+
+    //const funcionDeVariasLineas=()=>
+   
+    </script>
+
+</body>
+</html>

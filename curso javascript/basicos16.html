@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+  
+        let contador =10;
+
+        while (contador < 10){// primero ve la funcion condicional de que si cumple la condicional
+            console.log("While",contador);
+            contador++;
+        }
+
+        do{//aqui primero ve el codigo despues ve la condicional 
+            console.log(" do While",contador);
+            contador++;
+        } while(contador<10);
+
+        let numeros=[10,20,30,40,50,60,70,80,90];
+
+        for (let i = 0; i < numeros.length; i++) {//incluye todo los valores de do y do while
+            console.log("impresion de valores de numeros",numeros[i]);      
+        }
+        console.log("********************");
+        const yosep={
+            nombre: "yosep",
+            apellido:"aguirre obregon",
+            edad:"25"
+        }
+        for(const propiedad in yosep){//impresionj de propiedad dentro de un objeto en cicclo for
+            //console.log(propiedad);
+            //se utiliza mas para objetos primitivos
+            console.log(`Key:${propiedad}, Value:${yosep[propiedad]}`);
+            //si se quiere imprimir el valor de un object dentro de un for se imprime mediante el corchete
+        }//for in: nos permite solo recorrer propiedades del objecto 
+            
+        
+        // el for of ,nos va permitir recorrer todo los elementos de cualquier objeto que sea iterable js
+        // el for of: es mas para arreglos
+        let cadena ="Hola";//rrecore caracteres
+        for (const elemento of  cadena) {
+            console.log(elemento);
+            for (const elemento1 of numeros) {
+                console.log("dos"+elemento1);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

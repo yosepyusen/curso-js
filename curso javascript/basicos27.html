@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Basicos js
+    </h2>
+    <script>
+        console.log(Date());//mmuestra la hora y fecha de programa
+
+        let fecha = new Date();
+        console.log(fecha);
+        console.log(fecha.getDate());//mes
+        // dia sema: D L M Mi J V S --> 0 1 2 3 4 5 6  
+        console.log(fecha.getDay());//dia
+        // dia sema: D L M Mi J V S --> 0 1 2 3 4 5 6  ::: APLICA LA MMISMA LOGICA EN ,MES
+        console.log(fecha.getMonth());//MES EMPIEZA DESDE CERO
+        console.log(fecha.getFullYear());
+        console.log(fecha.getHours());
+        console.log(fecha.getMinutes());
+        console.log(fecha.getSeconds());
+        console.log(fecha.getMilliseconds());
+        console.log(fecha.toString());// imprime:: Mon Aug 08 2022 23:51:31 GMT-0500 (hora estándar de Perú)
+        console.log(fecha.toDateString());// imprime::  Mon Aug 08 2022
+        console.log(fecha.toLocaleString());// imprime::  8/8/2022, 23:51:31
+        console.log(fecha.toLocaleDateString());// imprime:: 8/8/2022
+        console.log(fecha.toLocaleTimeString());// imprime:: 23:54:21
+        console.log(fecha.getTimezoneOffset());// imprime:: 300
+        console.log(fecha.getUTCDate());// imprime:: 9
+        console.log(fecha.getUTCHours());
+        console.log(Date.now());
+
+        let cumpleyosep= new Date(1998, 8,13);
+        console.log(cumpleyosep);
+
+    </script>
+
+</body>
+</html>

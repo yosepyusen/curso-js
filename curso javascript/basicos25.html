@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>basicos js</h2>
+
+    <script>
+
+        class Animal{
+            constructor(nombre, genero){
+                this.nombre=nombre;
+                this.genero=genero;
+            }
+            sonar(){
+                console.log("hago sonidos pq estoy vivo");
+            }
+            saludar(){
+                console.log(`Hola mi nombre es ${this.nombre}`);
+            }
+        }
+
+        class Perro extends Animal{
+            constructor(nombre,genero,tamanio){
+            super(nombre,genero);
+            this.tamanio=tamanio;
+            this.raza=null;
+            }
+            sonar(){
+                console.log("Soy un oerro y hago ladridos");
+            }
+            ladrar(){
+                console.log("Guauuu!!");
+            }
+            //un metodo static se puede ejecutar sin necesidad de instanciar la cvlase
+            static queEres(){
+                console.log("Los perros somos animales mamiferos que pertenecemos a la familia de los caninos.Somos considerados mejores amigos del hombre");
+            }
+            get getRaza(){
+                return this.raza;
+            }
+            set setRaza(raza){
+                this.raza=raza;
+            }
+        }
+        Perro.queEres();
+
+        const mimi= new Animal("Mimi","Hembra"),
+        snoopy= new Perro("Snoopy","Macho","grande");
+
+        console.log(mimi);
+        mimi.sonar();
+        mimi.saludar();
+
+        console.log(snoopy);
+        snoopy.sonar();
+        snoopy.saludar();
+        snoopy.ladrar();
+        console.log(snoopy.getRaza);//imprime valor null
+        snoopy.setRaza= "Gran Danéz";
+        console.log(snoopy.getRaza);
+
+        //****************
+        console.log("***********************");
+        class Personas{
+            constructor(nombre,genero){
+                this.nombre=nombre;
+                this.genero=genero;
+            }
+            saludame(saludo){
+                console.log(`mi nombre es:${this.nombre} y ${saludo}`);
+            }
+            sonido(){
+                console.log("hago sonidos pq estoy vivo");
+            }
+        }
+        class Hombre extends Personas{
+            constructor(nombre,genero,edad){
+                super(nombre,genero,edad);
+                this.edad=edad;
+            }
+            Saludame(){
+                console.log(`hola soy gaiaa`);
+            }
+            
+            CualesEdad(){
+                console.log(`Mi edad es ${this.edad}`);
+            }
+
+        }
+
+        const mChile=new Personas("mChile","Hembra"),
+        hGai= new Hombre("Gaii","Masculino","25");
+
+        console.log(mChile);
+        mChile.saludame("Buenas noches");
+        mChile.sonido();
+        
+        console.log(hGai);
+        hGai.saludame("Buenos dias");
+        hGai.sonido();
+        
+        
+
+
+    </script>
+</body>
+</html>

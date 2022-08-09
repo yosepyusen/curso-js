@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+    basicos javasr
+    </h2>
+    <script>
+
+        //herencia protipica
+
+        function Animales(nombre,genero){
+            this.nombre=nombre;
+            this.genero=genero;
+        }
+
+        Animales.prototype.sonar=function(instrument, grave, agudo){
+            console.log(`sonidos de: ${instrument}, ${grave}, ${agudo}`);
+        }
+        Animales.prototype.saludo=function(dias,tardes,noche){
+            console.log(`Los saludos de: ${dias, this.nombre}, ${tardes}, ${noche}`);
+        }
+        //herencia prototipica
+
+        function Perro(name,genero,tamanio){
+            this.super=Animales,//super para llamar al constructor
+            this.super(name,genero);
+            this.tamanio=tamanio;
+        }//perro esta heredando d animal
+
+        Perro.prototype=new Animales();
+        Perro.prototype.constructor = Perro;
+
+        //sobre escritura de metodos del prototipo padre en el hijo 
+        Perro.prototype.sonar= function(){
+            console.log("Soy un perro y mi sonido es un ladrido");
+        }
+        Perro.prototype.ladrar=function(){//function exclusico de perro
+            console.log("Guagua guaaauu!!!");
+        }
+
+        const snoopy = new Perro("Snoopy","Macho","Mediano");
+        const lolaBunny = new Animales("Lolabunny","Hembra");
+
+        console.log(snoopy);
+        console.log(lolaBunny);
+
+
+        snoopy.sonar("instrumental","Grave","Agudo");
+        snoopy.saludo("Buenos dias","buenas tardes","Buenas noches");
+        snoopy.ladrar();
+
+        lolaBunny.sonar("instrumental","Grave","Agudo");
+        lolaBunny.saludo("Buenos dias","buenas tardes","Buenas noches");
+
+
+    </script>
+    
+</body>
+</html>

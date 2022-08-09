@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+        //concatenacion
+        let nombre ="Jon";
+        let apellido ="miakalifa";
+        //concatenación 
+        let saludo ="Hola mi nombre es "+nombre+" "+apellido+"."; 
+        console.log(saludo);
+        //interpolacio de variables
+        //templates string
+        let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
+        console.log(saludo2);
+
+        let ul ="<ul><li>verano</li><li>otoño</li><li>invierno</li><li>primavera</li></ul>" // se pone todo el cod en una linea si es de hrml
+        console.log(ul);
+
+        let ul2 = `
+        <ul>
+        <li>Primavera</li>
+        <li>Otoño</li>
+        <li>Verano</li>
+        <li>Invierno</li>
+        </ul>     
+        `
+        console.log("impresion de html con al + 96 (`)");
+        console.log(ul2);
+        //opcion de contatenacion a continuacion lo sig
+        let ul3="<ul>";
+            ul3 +="<li>Primavera</li>";
+            ul3 +="<li>Otoño</li>";
+            ul3 +="<li>Verano</li>";
+            ul3 +="<li>Invierno</li>";
+            ul3 +="</ul>";
+        
+        console.log(ul3);
+    
+            
+    </script>
+
+</body>
+</html>

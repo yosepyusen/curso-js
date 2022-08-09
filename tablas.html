@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+<style>
+
+    *{
+      box-sizing: border-box;
+      width: 100%;
+      
+    }
+    .todo{
+      max-width: 100%;
+      max-height: 100%;
+    }
+    body{
+    display: flex;
+    min-height:100vh;
+    background: #EFC076;
+    }
+    .container-slider{
+      width: 90%;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden; /*pone img en uno sobrer otro*/
+      box-shadow: 0 0 0 10px #fff, /*pone un borde de 10px al rededor de la img*/
+                0 15px 50px rgb(190, 188, 188); /*sombra es pcional*/
+      position: relative; /*poner botonoes*/
+    }
+    .slider{ /*wato pone a las img en una fila*/
+      height: 400px;
+      width: 400%; /*por que son 4 img y si son 5 son 500%*/
+      display: flex;
+      margin-left: -100%;
+      
+    }
+    .slider__section{
+      width: 100%;
+
+    }
+    .slider__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;*/
+    
+  }
+  .slider_btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer; /*aparezca un booton*/
+  }
+  .slider__btn:hoover{
+    background: #fff;
+  }
+  .slider__btn--left{
+    left: 10px;
+  }
+  .slider__btn--right{
+    right: 10px;
+  }
+
+</style>
+  
+ 
+    </head>
+<body>
+<div class="todo">
+  <div class="container-slider">
+   <div class="slider" id="slider">
+
+    <div class="slider__section">
+      <img src="regidores.jpg" alt="" class="slider__img">
+    </div>
+    <div class="slider__section">
+      <img src="tuya.jpg" alt="" class="slider__img">
+    </div>
+    <div class="slider__section">
+      <img src="tishgo.jpg" alt="" class="slider__img">
+    </div>
+    <div class="slider__section">
+      <img src="chacabamba.png" alt="" class="slider__img">
+    </div>
+   </div>
+   <div class="slider_btn slider__btn--right " id="btn-right">&#62;</div>
+   <div class="slider_btn slider__btn--left " id="btn-left">&#60;</div>
+  </div>
+</div>
+  <script>
+      
+      const slider =document.querySelector("#slider");
+    let sliderSection = document.querySelectorAll(".slider__section");
+    let sliderSectionLast = sliderSection[sliderSection.length -1];
+
+    const btnLeft = document.querySelector("#btn-left");
+    const btnRight = document.querySelector("#btn-right");
+
+    slider.insertAdjacentElement('afterbegin',sliderSectionLast);
+   
+ function Next(){
+      let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
+      slider.style.marginLeft = "-200%";
+      slider.style.transition = "all 0.5s";
+      setTimeout(function(){
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('beforeend',sliderSectionFirst);
+        slider.style.marginLeft = "-100%";
+      }, 500);
+    }
+
+    btnRight.addEventListener('click',function(){
+    Next();
+    });
+
+    function Prev(){
+      let sliderSection = document.querySelectorAll(".slider__section");
+      let sliderSectionLast = sliderSection[sliderSection.length -1];
+
+      slider.style.marginLeft = "0";
+      slider.style.transition = "all 0.5s";
+      setTimeout(function(){
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('afterbegin',sliderSectionLast);
+        slider.style.marginLeft = "-100%";
+      }, 500);
+    }
+
+    btnRight.addEventListener('click',function(){
+    Next();
+    });
+
+    btnLeft.addEventListener('click',function(){
+    Prev();
+    });
+    setInterval(function(){
+      Next();
+    }, 5000)
+    </script>
+
+</body>
+</html>

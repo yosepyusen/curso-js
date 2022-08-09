@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+    basicos javasr
+    </h2>
+    <script>
+
+    //POO:programacion orientada a objetos 
+    /*
+    Clase: modelo a seguir
+    Objetos:instancia de una clase
+    Atributos: es una caractersitica de propiedad del objeto(variables dentro de un objeto)
+    Métodos: son acciones que un objeto puede realizar (son funciones dentro de un objeto)
+     */ 
+
+     const animal = {
+        nombre: "Snoopy",
+        sonar(){
+            console.log("Hago sonidos por q estoy vivo");
+        }
+     }; console.log(animal);
+
+     const animal2 ={
+        nombre:"lolabony",
+        sonar(){
+            console.log("hago sonidos");
+        }
+     }; console.log(animal2);
+
+     console.log("***************");
+
+     function Animal(nombre, genero) {
+        // atributos
+        this.nombre=nombre;
+        this.genero= genero;
+
+        // metodos, es preferible que se saque de la funcion
+        this.sonar= function(){// esta funcion comeria memoria si se pide bastante animales, eso se debe sacar
+            console.log("Hago sonidos por q estoy vivo");
+        },
+        this.saludar = function(saludo){
+            console.log(`hola me llamo ${this.nombre}, y el saludo es:${saludo}`);
+        }
+     }
+
+     const snoopy = new Animal("Snoppy","Macho"),
+     lolaBunny = new Animal("Lola Bunny","Hembra");
+
+     console.log(snoopy);
+     console.log(lolaBunny);
+
+     snoopy.sonar();
+     snoopy.saludar(saludo="csm");
+
+     lolaBunny.saludar(saludo="csm");
+     lolaBunny.sonar();
+
+     console.log("**************");
+     //----------------------------------------------------
+     // funcion donde se asigna los metodos al prototipo
+     function Cosas(lapiz,libro){
+        this.lapiz=lapiz;
+        this.libro=libro;
+     }
+
+     //metoidos agregados al prototipo de la funcion constructora 
+
+     Cosas.prototype.sonido= function(){
+        console.log("Hago sonidos por q estoy vivo");
+     }
+
+     Cosas.prototype.saludame= function(ludo){
+        console.log(`hola me llamo ${this.name} y el saludo es:${ludo}`);
+     }
+
+     const utiles = new Cosas("lapiz de madera","libro de coquito"),
+     utiles2 = new Cosas("lapiz de metal","libro obra");
+
+     console.log(utiles);
+     console.log(utiles2);
+
+     utiles.sonido();
+     utiles.saludame("csm");
+     
+     utiles2.sonido();
+     utiles2.saludame("csm");
+
+
+
+    </script>
+</body>
+</html>

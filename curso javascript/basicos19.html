@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+        
+     const numeros=[1,2,3];
+    //sin destructuracion
+     let uno = numeros[0];
+     let dos = numeros[1];
+     let tres = numeros[2];
+
+     console.log(uno,dos,tres)
+        
+     //con destructuracion
+        
+     const [one,two,three]=numeros;
+     console.log(one,two,three);
+
+     const persona ={
+        nombre: "Yosep",
+        apellido:"aguirre obregon",
+        edad:35
+     }
+
+     let {nombre,apellido,edad}=persona;//lamamos los valores del objeto con el mismo nombre que se encutra dentro del objeto
+     //
+     console.log(nombre+"\n",apellido+"\f",edad);
+
+    </script>
+
+</body>
+</html>

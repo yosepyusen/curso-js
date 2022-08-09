@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+    <script>
+
+        // CADENAS DE TEXTO AKA STRING
+        let nombre ="Jon";
+        let apellido ="miakalifa";
+        let saludo = new String("Hola munfo cruel"); //new: objeto nuevo
+        let lorem = "       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis saepe distinctio eum. Debitis, necessitatibus quis, non, iusto veritatis laborum minus perspiciatis doloremque ea saepe officia atque? Eligendi quod reprehenderit a?        "
+
+        console.log(nombre,apellido,saludo);
+        console.log(nombre.length,apellido.length,saludo.length,
+            nombre.toUpperCase(),
+            apellido.toLowerCase(),
+            lorem.includes("amet"),//para que encuentra el valor >> amet
+            lorem,
+            lorem.trim(),//quita los espacios en blanco al inicio al final
+            lorem.split(" "),
+            lorem.split(",")
+        );
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+        
+       const numero=[1,2,3,4,5,6,7,8,9,0]; 
+
+       for (let i = 0; i < numero.length; i++) {
+        if (i===5) {
+            break;//rompe el ciclo y sale del control
+        }
+        console.log(numero[i]);
+       }console.log("****");
+       for (let i = 0; i < numero.length; i++) {
+        if(i===5){
+            continue;// omite la iteracion de esa posicion
+        }  
+        console.log(numero[i]);      
+       }
+
+       console.log("*******");
+       console.log("impresion de numero pares");
+       for (let k = 0; k < numero.length; k++) {
+        if(numero[k]%2===0){
+            
+            console.log(numero[k]);
+        }
+               
+       }
+       console.log("impresion de numero impares");
+       for (let j = 0; j < numero.length; j++) {
+         if(numero[j]%2 !== 0){
+            console.log(numero[j]);
+         }
+        
+       }
+
+    </script>
+
+</body>
+</html>

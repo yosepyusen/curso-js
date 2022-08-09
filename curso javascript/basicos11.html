@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+      function EstoEsUnaFuncion(){
+        console.log("21");
+        console.log("1212");
+        console.log("tr323es");
+    }
+    //invpcacion de fiuncuiones
+    EstoEsUnaFuncion();//aqui llamamos la funcion, se pued einvocar varias veces
+   
+    function UnaFuncionQueDevuelveValor() {
+        console.log("Uno");
+        console.log("dos");
+        console.log("tres");
+        return "La funcion a retoirnado una cadena de texto";
+    }
+    //si llamamos a la funcion defrente no imprime el return el texto pero guardando a una variable debe imprimir
+    let valorDeFuncion = UnaFuncionQueDevuelveValor();
+    console.log(valorDeFuncion);
+
+    console.log("******llamar una funcion 2 dos returns****");
+    function UnaFuncionQueDevuelveValor2() {
+        console.log("Uno");
+        return 19;
+        console.log("dos");
+        console.log("tres");
+        return "La funcion a retoirnado una cadena de texto";
+    }
+    //si llamamos a la funcion defrente no imprime el return el texto pero guardando a una variable debe imprimir
+    let valorDeFuncion2 = UnaFuncionQueDevuelveValor2();
+    console.log(valorDeFuncion2);
+    console.log("Omite tres valores despues del returbn de UnaFuncionQueDevuelveValor2()");
+    
+
+    ///recibir datos
+    console.log("*************");
+    function saludar(nombre ="locomicausa",edad="45"){
+        console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
+    }
+    //impresion de funcion con dos valores nombre 
+    saludar("aguiree",7);
+    saludar();
+    console.log("*************");
+
+    //funcion declarada vs funcion expresadas
+
+    funcionDeclarada();//igual imprime valores si esta antes
+
+    function funcionDeclarada(){
+        console.log("Esto es una funcion declarada, puede invocarse en cualquier parte de nuestro codigo inclusi de que la funcion se antes declarada");
+    }
+
+    funcionDeclarada();
+    // funcion anonima si llamamos antes la funcion nos da error
+    //funcionExpresada();//en este caso no permite
+    const funcionExpresada = function(){
+        console.log("Esto es una funcion expresada, es decir, una funcion QUE se ha signado como valor a una varibale, si invocamos esta funcion antes de su funcion, js no dira")
+    }
+    funcionExpresada();
+    
+
+    </script>
+
+</body>
+</html>

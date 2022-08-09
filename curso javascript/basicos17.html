@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+
+    <script>
+  
+    try{
+        console.log("En el Try se agrega el código a evaluar");
+        noexiste;
+        console.log("Me llegas al chompiras");
+    }catch(error){
+          console.log("Catch, captura cualquier error surgido o lanzado en el try");  
+          console.log(error);
+        }  finally{
+            console.log("El bloque finally se ejecutara siempre al final de un bloque try-catch");
+        } 
+
+    //personalizar mensajes de error
+    try{
+        let number="tr";
+        
+        if(isNaN(number)){//isNaN, funcion si le pasas un numero te devuelve (false) y si no es numero es (verdadero)
+            throw new Error("El caracter introducido no es un numero");
+            //error general
+        }
+
+        console.log(number*number);
+    }catch(error){
+        console.log("Se producjo el siguiente error:"+error);
+    }
+    
+
+    </script>
+
+</body>
+</html>

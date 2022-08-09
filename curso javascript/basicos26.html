@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Basicos js
+    </h2>
+    <script>
+
+        console.log(console);
+        console.error("Estos es un error");
+        console.warn("Esto es un aviso");
+        console.info("ESto es un info");
+        console.log("console de imprimir");
+
+        let nombre ="yosep",
+        apellido="Aguirre",
+        edad=35;
+
+        console.log(nombre);
+        console.log(apellido);
+        console.log(edad);
+        console.log(`Hola mi nombre es ${nombre} ${apellido} y mi edad es ${edad}`);
+        console.log(`Hola mi nombre es %s %s y mi edad es %d años.`,nombre,apellido,edad);
+        console.clear();
+        console.log(window);
+        console.log(document);//representacion de doc de html
+        console.dir(window);
+        console.dir(document);
+        console.clear();
+
+        console.group("Cursos de yosep js");
+        console.log("cusros de js");
+        console.log("cusros de node js");
+        console.log("cusros de pwas");
+        console.log("cusros de flexbox");
+        console.log("cusros de diseño web");
+        console.groupEnd();
+        
+        console.groupCollapsed("Cursos de yosep js");
+        console.log("cusros de js");
+        console.log("cusros de node js");
+        console.log("cusros de pwas");
+        console.log("cusros de flexbox");
+        console.log("cusros de diseño web");
+        console.groupEnd();
+
+        console.clear();
+        console.log(console);
+        console.table(Object.entries(console).sort());
+
+        const numero=[1,2,3,4,5],
+        vocales=["a","e","i","o","u"];
+
+        console.table(numero);
+        console.table(vocales);
+
+        const perro={
+            nombre:"scoby",
+            raza:"rotwailer",
+            color:"cafe"
+        }
+        console.table(perro);
+
+        //console.clear();
+
+        console.time("Cuanto timepo tarde mi codigo");
+        const arreglo =Array(1000000);
+        for(let i=0; i<arreglo.length; i++){
+            arreglo[i]=i;
+        }
+        console.timeEnd("Cuanto timepo tarde mi codigo");
+        //
+        console.log("*******************");
+        for(let j=0; j<=100; j++){
+            console.count("codigo for");
+            console.log(j);
+        }
+        
+        let x=1,
+        y=2,
+        pruebaXY="Se espera que X siempre sea menor que Y";
+
+        console.assert(x<y,(x,y,pruebaXY));// assert es para comprobar la consicion
+
+    </script>
+
+</body>
+</html>
