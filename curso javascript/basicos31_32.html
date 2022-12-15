@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento Java</title>
+</head>
+<body>
+    <h1>Fundamento javasrcit</h1>
+    <script>
+        //var es para declarar una variable de ambito global
+        //let : va ser unn ambito de bloque
+        /*var hola="Hola mundo cruel";
+        console.log(hola);
+        if () {   
+        }*/
+        var hola="Hola mundo cruel";
+        let hello="Hello world";
+        console.log(hola);     
+        console.log(hello);
+        console.log(window);//mapea todo los variables del console
+        console.log(window.hola);//imprime el valor
+        console.log(window.hello);//no imprime el valor pq no existe
+
+        //ambito de cloque
+        /********/console.log("************var*******");
+        var musica="Rock";
+        console.log("variable musica antes deñl bloque",musica);
+        //esto es un bloque-comentario de una linea
+        
+        {
+            var musica = "Pop";
+            console.log("variable dentro del bloque",musica);
+        }
+        console.log("variable musica despues del bloque",musica);
+        /********/console.log("************let*******");
+        let musica2="Rock";
+        console.log("variable musica antes deñl bloque",musica2);
+        //esto es un bloque-comentario de una linea
+        
+        {
+            let musica2 = "Pop";
+            console.log("variable dentro del bloque",musica2);
+        }
+        console.log("variable musica despues del bloque",musica2);
+//asgregadoooo yo
+        let mensaje="hola que tal?"
+        var nombre3="Yosep"
+
+        console.log(mensaje);
+        console.log(nombre3);
+        console.log(window);
+
+          /* **********     Curso JavaScript: 31. Expresiones Regulares - #jonmircha     ********** */
+    /*
+     Expresiones Regulares
+        Son una secuencia de caracteres que forma un patrón de búsqueda, principalmente utilizada para la búsqueda de patrones de cadenas de caracteres.
+
+        https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+    */
+     /*
+     let cadena = "Lorem 5 ipsum dolor sit amet consectetur  10  adipisicing elit. Voluptatem fuga cupiditate dolores saepe, praesentium sit eaque recusandae id sapiente similique, laudantium voluptatum perferendis ea iure ad odio doloremque earum voluptate.";
+     // ig,i,"", son banderas
+     let expReg = new RegExp("lorem", "g"); //  busca el parametro lorem, y g: para toda las coincidencias, caso si le dejhamos asi va detener en el primer busqyeda, si ponemos i:ignora mayuscula y minuscula
+     let expReg1 = new RegExp("lorem", "ig");//busca
+     let expReg2 = new RegExp("lorem", "");
+     //segunda mnaera de buscar una exprsion regukar
+     let expReg3 = /lorem/ig; //ig , bandera
+     let expReg3_1 = /7{1,2}/;// debe de estar entre 1 y dos veces o solo ponemos un numero {5}
+     let expReg31 = /\d/;
+     let expReg311 = /[6-9]/;
+     let expReg4 = new RegExp("lorem", "i");
+
+     console.log(expReg.exec(cadena)); //aqui tbm hacemos la validacion y nos devuelve en un arreglo
+     console.log(expReg.test(cadena)); //aqui validamo q existe esa busqeda
+
+     console.log(expReg4.exec(cadena))
+
+     console.log(expReg3.exec(cadena));
+     console.log(expReg3.test(cadena));
+
+     console.log("busqueda de numero: "+expReg31.test(cadena));
+     console.log("busqueda de numero 6-9: "+expReg311.test(cadena));
+     console.log("busqueda de dolor: "+expReg3_1.test(cadena));*/
+
+    /* **********     Curso JavaScript: 32. Funciones Anónimas Autoejecutables - #jonmircha     ********** */
+       //Función Anónima Autoejecutables
+     /*
+    (function () {
+      console.log("Mi primer anonima auto ejecutable");
+      
+    }) ();
+    
+    (function (d,w,c) { //  primer parametroi d despues w y c
+      console.log("Mi 2da anonima auto ejecutable");
+      console.log(d); //docuemnt reprewsenta a d
+      console.log(w);
+      c.log("Este es un cosole.log");
+      //console.log(d);
+    }) (document,window,console); // documen pasando parametro en d
+    
+    //Formas de escribir las funciones Anónimas Autoejecutables
+       //Clásica
+       (function () {
+         console.log('versión Clásica')
+       })();
+
+       //La Crockford (JavaScript The Good Parts)
+       ((function () {
+         console.log('versión Crockford')
+       })());
+
+       //Unaria
+       +function () {
+         console.log('versión Unaria')
+       }();
+
+       //Facebook
+       !function () {
+         console.log('versión Facebook')
+       }(); 
+
+  //alert("Hola")*/
+    </script>
+</body>
+</html>
