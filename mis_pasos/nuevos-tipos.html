@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Nuevos tipos de datos en js</h1>
+<body>
+    <script>
+        /******** curso 49****/
+        //Symbol()::es un dato primitivo
+        let id="hola";
+        let id2="hola";
+        let id3_1= Symbol("id");
+        let id3_2= Symbol("id2");
+        //symbol::::: crea una referencia unica
+
+        console.log(id===id2);//aqui comparamos los variables
+        console.log(id3_1===id3_2);//false por q es simbolo
+        console.log(typeof id3_1,typeof id3_2);// typeof:: analizar dato
+        
+        const NAME = Symbol("nombre");//para diferenciar ponemos un cadena de texto para diferenciador
+        const SURNAME = Symbol("APELLIDO");
+        const SALUDAR = Symbol("saludar");
+
+        const persona = { //clase, lkos corchetes van siempre y cuando declaramos antes dicha varible
+          [NAME]: "Jon", //para definir objetos privados 
+          [SURNAME]: "Mircha" ,
+          edad: 35 //aqui no ponemos corchetes pq no creamos una varibale
+        }
+        console.log(persona);
+        
+        persona.NAME= "JonatanMircha"//con . creo mas propiedades
+        persona.SURNAME="Mircha"
+        console.log(persona);
+        console.log(persona.NAME);//imprime JonatanMircha
+        console.log("Imprimimos nombre: "+persona[NAME]); //imprime Jon
+        console.log("imprimimos el apellido: "+persona[SURNAME]);
+
+        persona[SALUDAR] = function (){
+            console.log("Hola");
+        }
+        console.log(persona);
+        persona[SALUDAR]();//imprmimos dentro de una funcion saludar
+
+        for(let propiedad in persona){//for para que imprima todo los valores del objeto symbolo
+            console.log(propiedad); // aqui nombre de la propiedad
+            console.log(persona[propiedad]);//ase referencia al valor de la propiedad
+        }
+        
+        console.log("*********");
+        console.log(Object.getOwnPropertySymbols(persona));
+
+
+   </script>
+</body>
+</html>
